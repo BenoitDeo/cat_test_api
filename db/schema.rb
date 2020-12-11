@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 2020_12_10_093916) do
 
   create_table "cats", force: :cascade do |t|
     t.string "name"
-    t.string "sex"
+    t.integer "sex"
     t.string "colour"
-    t.string "dob"
+    t.date "dob"
     t.string "favourite_food"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
