@@ -2,9 +2,9 @@ class CreateCats < ActiveRecord::Migration[6.1]
   def change
     create_table :cats do |t|
       t.string :name
-      t.string :sex
+      t.integer :sex
       t.string :colour
-      t.string :dob
+      t.date :dob
       t.string :favourite_food
 
       t.timestamps

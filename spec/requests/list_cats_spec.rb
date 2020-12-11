@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Get all cats", :type => :request do
+describe "list cats", :type => :request do
   let!(:cats) {FactoryBot.create_list(:random_cat, 5)}
 
 before {get '/api/v1/cats'}

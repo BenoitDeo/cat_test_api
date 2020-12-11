@@ -1,14 +1,16 @@
 require 'rails_helper'
 
-describe "Create cat", :type => :request do
+describe "create cat", :type => :request do
 
     before do
         post '/api/v1/cats', params: {
-            :name => 'test_name', 
-            :colour => 'test_colour', 
-            :sex => 'test_sex', 
-            :dob => '12/12/12', 
-            :favourite_food => 'test_favourite_food' 
+            :cat => {
+                :name => 'test_name', 
+                :colour => 'test_colour', 
+                :sex => 'male', 
+                :dob => '2012-12-12', 
+                :favourite_food => 'test_favourite_food' 
+            } 
         }
     end
 
@@ -19,10 +21,10 @@ describe "Create cat", :type => :request do
         expect(JSON.parse(response.body)['colour']).to eq('test_colour')
     end
     it 'returns cat\'s sex' do
-        expect(JSON.parse(response.body)['sex']).to eq('test_sex')
+        expect(JSON.parse(response.body)['sex']).to eq('male')
     end
     it 'returns cat\'s dob' do
-        expect(JSON.parse(response.body)['dob']).to eq('12/12/12')
+        expect(JSON.parse(response.body)['dob']).to eq('2012-12-12')
     end
     it 'returns cat\'s favourite food' do
         expect(JSON.parse(response.body)['favourite_food']).to eq('test_favourite_food')
